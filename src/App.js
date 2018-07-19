@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {
   Nav, Navbar, NavbarBrand, NavItem, NavLink,
 } from 'reactstrap';
-import FrontPage from './FrontPage';
-import Payments from './Payments';
-import Neighbors from './Neighbors';
-import RouterSettings from './RouterSettings';
-import NetworkSettings from './NetworkSettings';
-import { actions, connect } from '../store';
+import FrontPage from './components/FrontPage';
+import Payments from './components/Payments';
+import Neighbors from './components/Neighbors';
+import RouterSettings from './components/RouterSettings';
+import NetworkSettings from './components/NetworkSettings';
+import { actions, connect } from './store';
 
 class App extends Component {
   constructor(props) {
