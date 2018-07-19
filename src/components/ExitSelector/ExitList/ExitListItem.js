@@ -4,7 +4,7 @@ import {
   ListGroupItem,
   ListGroupItemHeading,
 } from 'reactstrap';
-import { actions } from '../store';
+import { actions } from '../../../store';
 
 const ExitListItem = ({
   active, description, nickname, state, message,

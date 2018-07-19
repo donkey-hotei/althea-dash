@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { actions, connect } from '../store';
+import { actions, connect } from '../../store';
 import WifiSettingsForm from './WifiSettingsForm';
 
 class RouterSettings extends Component {

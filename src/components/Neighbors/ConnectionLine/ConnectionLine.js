@@ -19,17 +19,7 @@ const ConnectionLine = ({
     animation = 'none';
   }
   return (
-    <div
-      style={{
-        minWidth: 30,
-        flexGrow: 1,
-        display: 'flex',
-        position: 'relative',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-      }}
-    >
+    <div className="connection-line">
       <div
         style={{
           height: thickness,

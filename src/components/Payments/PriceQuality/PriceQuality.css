@@ -1,0 +1,11 @@
+.price-quality-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 10px;
+}
+
+.price-quality-preference {
+    display: flex;
+    justify-content: space-between;
+}

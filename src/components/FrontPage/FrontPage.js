@@ -1,19 +1,13 @@
 import React from 'react';
-import payments from '../images/payments.svg';
-import neighbors from '../images/neighbors.svg';
-import network from '../images/network.svg';
-import router from '../images/router.svg';
+import payments from '../../images/payments.svg';
+import neighbors from '../../images/neighbors.svg';
+import network from '../../images/network.svg';
+import router from '../../images/router.svg';
 import Icon from './Icon';
+import './FrontPage.css';
 
 const FrontPage = () => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexWrap: 'wrap',
-    }}
-  >
+  <div className="front-page">
     <Icon image={payments} link="#payments">
       Payments
     </Icon>

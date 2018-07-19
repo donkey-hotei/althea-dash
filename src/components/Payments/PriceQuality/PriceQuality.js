@@ -11,19 +11,16 @@ import {
 } from 'reactstrap';
 
 const PriceQuality = () => (
-  <Card style={{
-    flex: 1, minWidth: 300, maxWidth: 400, margin: 10,
-  }}
-  >
+  <Card className="price-quality-card">
     <CardBody>
       <h3>
-Price/Quality tradeoff:
+        Price/Quality tradeoff:
       </h3>
 
       <Form>
         <FormGroup>
           <Input type="range" />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div className="price-quality-preference">
             <small>
                 Prefer low price
             </small>

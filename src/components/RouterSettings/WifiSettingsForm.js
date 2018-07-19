@@ -8,7 +8,7 @@ import {
   Input,
   Label,
 } from 'reactstrap';
-import { actions } from '../store';
+import { actions } from '../../store';
 import AdvancedSettingsModal from './AdvancedSettingsModal';
 
 class WifiSettingsForm extends Component {

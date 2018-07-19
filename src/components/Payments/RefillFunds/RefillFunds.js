@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import QRious from 'qrious';
 
-class RefillFunds extends Component {
+export default class RefillFunds extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,14 +25,7 @@ class RefillFunds extends Component {
     const { address } = this.props;
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          marginTop: 60,
-          marginBottom: 60,
-        }}
-      >
+      <div className="refill-funds">
         <Button
           onClick={this.toggleAddressModal}
           outline
@@ -49,13 +42,7 @@ class RefillFunds extends Component {
           <ModalHeader toggle={this.toggleAddressModal}>
             Send Ether to this address:
           </ModalHeader>
-          <ModalBody
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
+          <ModalBody className="refill-funds-modal-body">
             <img
               src={new QRious({
                 size: 256,
@@ -69,5 +56,3 @@ class RefillFunds extends Component {
     );
   }
 }
-
-export default RefillFunds;

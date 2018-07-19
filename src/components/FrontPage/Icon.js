@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Icon = ({ children, link, image }) => (
-  <div style={{ padding: 50, paddingBottom: 0 }}>
+  <div className="front-page-icon">
     <a href={link}>
       <img width={256} height={256} src={image} />
       <h2>

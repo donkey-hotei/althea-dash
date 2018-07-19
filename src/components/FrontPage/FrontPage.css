@@ -1,0 +1,11 @@
+.front-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.front-page-icon {
+    padding: 50px;
+    padding-bottom: 0px;
+}

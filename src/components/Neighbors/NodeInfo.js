@@ -3,10 +3,10 @@ import {
   Card,
   CardBody,
   CardTitle,
-  LabelUnit,
 } from 'reactstrap';
+import LabelUnit from './LabelUnit';
 import ConnectionLine from './ConnectionLine';
-import { clamp, metric2word } from '../libs/utility';
+import { clamp, metric2word } from '../../lib/utils';
 
 const NodeInfo = ({
   nickname,

@@ -1,6 +1,5 @@
 // @ts-check
 import cckd from 'camelcase-keys-deep';
-import { actions } from '../store';
 
 async function get(url) {
   const res = await fetch(url);

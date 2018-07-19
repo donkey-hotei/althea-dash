@@ -1,5 +1,5 @@
 import { initStore } from 'react-stateful';
-import Backend from '../libs/backend';
+import Backend from '../api/client';
 
 const backend = new Backend();
 const j = {

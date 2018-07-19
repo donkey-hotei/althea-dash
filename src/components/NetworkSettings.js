@@ -68,7 +68,7 @@ class NetworkSettings extends Component {
     return (
       <div>
         <h1>
-Network Settings
+          Network Settings
         </h1>
         <p>
           Exit nodes are like a combination of a VPN and a speedtest server.

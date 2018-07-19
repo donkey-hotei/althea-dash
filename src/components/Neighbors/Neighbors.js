@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { actions, connect } from '../store';
-import '../styles/BasicScroll.css';
+import { actions, connect } from '../../store';
 import NodeInfo from './NodeInfo';
-import { normalizeNeighbors } from '../libs/utility';
+import { normalizeNeighbors } from '../../lib/utils';
+import './Neighbors.css';
 
 class Neighbors extends Component {
   componentDidMount() {
@@ -25,6 +25,5 @@ class Neighbors extends Component {
     );
   }
 }
-
 
 export default connect(['neighborData'])(Neighbors);

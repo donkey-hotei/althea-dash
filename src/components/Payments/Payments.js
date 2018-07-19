@@ -1,22 +1,7 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Progress,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Card,
-  CardBody,
-} from 'reactstrap';
 import MoneyBar from './MoneyBar';
 import RefillFunds from './RefillFunds';
-import { actions, connect } from '../store';
+import { actions, connect } from '../../store';
 
 class Payments extends Component {
   constructor(props) {
@@ -60,4 +45,4 @@ class Payments extends Component {
   }
 }
 
-export default connect(['settings', 'info'])(Payments);
+export default Payments;

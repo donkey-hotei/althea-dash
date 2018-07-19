@@ -8,8 +8,8 @@ import {
   Label,
   Input,
 } from 'reactstrap';
-import { emailRegex } from '../libs/utility';
-import { actions } from '../store';
+import { emailRegex } from '../../lib/utils';
+import { actions } from '../../store';
 
 class NodeInfoForm extends Component {
   constructor(props) {

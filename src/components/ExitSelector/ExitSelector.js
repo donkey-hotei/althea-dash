@@ -1,12 +1,12 @@
 import React from 'react';
 import ExitList from './ExitList';
 import NodeInfoForm from './NodeInfoForm';
-import { emailRegex } from '../libs/utility';
+import { emailRegex } from '../../lib/utils';
 
 const ExitSelector = ({ exitClient: { regDetails, currentExit, exits } }) => (
   <div>
     <NodeInfoForm regDetails={regDetails} />
-    <h2 style={{ marginTop: 20 }}>
+    <h2 className="exit-selector-header">
         Select exit
     </h2>
     <ExitList

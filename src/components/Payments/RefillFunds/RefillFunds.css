@@ -1,0 +1,12 @@
+.refill-funds {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.refill-funds-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

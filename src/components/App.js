@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Nav, Navbar, NavbarBrand, NavItem, NavLink,
 } from 'reactstrap';
-import Frontpage from './Frontpage';
+import FrontPage from './FrontPage';
 import Payments from './Payments';
 import Neighbors from './Neighbors';
 import RouterSettings from './RouterSettings';
@@ -20,7 +20,7 @@ class App extends Component {
     window.addEventListener('hashchange', this.onHashChange, false);
   }
 
-  static onHashChange() {
+  onHashChange() {
     actions.changePage(window.location.hash.substr(1));
   }
 
@@ -88,7 +88,7 @@ const Page = connect(['page'])(({ state }) => {
     case 'neighbors':
       return <Neighbors />;
     default:
-      return <Frontpage />;
+      return <FrontPage />;
   }
 });
 
