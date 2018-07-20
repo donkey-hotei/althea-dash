@@ -1,12 +1,14 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "plugin:jasmine/recommended"],
+    "plugins": ["jasmine"],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] } ],
         "no-console": "off",
         "no-loop-func": "off"
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jasmine": true
     }
 }
 
