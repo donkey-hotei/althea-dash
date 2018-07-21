@@ -8,10 +8,11 @@ import {
   Label,
   Input,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 import { emailRegex } from '../../lib/utils';
 import { actions } from '../../store';
 
-class NodeInfoForm extends Component {
+export default class NodeInfoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +53,10 @@ class NodeInfoForm extends Component {
 
   isFieldValid(name) {
     const { fields, valid } = this.state;
-    fields[name] ? valid[name] : undefined;
+    if (fields[name]) {
+      return valid[name];
+    }
+    return undefined;
   }
 
   render() {
@@ -111,4 +115,6 @@ class NodeInfoForm extends Component {
   }
 }
 
-export default NodeInfoForm;
+NodeInfoForm.propTypes = {
+  regDetails: PropTypes.objectOf(PropTypes.string).isRequired,
+};

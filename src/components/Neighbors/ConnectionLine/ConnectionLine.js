@@ -1,9 +1,10 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const ConnectionLine = ({
-  label,
+  // label,
   thickness,
-  children,
+  // children,
   dash,
   scrollDirection,
   scrollSpeed,
@@ -31,6 +32,15 @@ const ConnectionLine = ({
       />
     </div>
   );
+};
+
+ConnectionLine.propTypes = {
+  // label: PropTypes.string.isRequired,
+  thickness: PropTypes.number.isRequired,
+  // children: PropTypes.string.isRequired,
+  dash: PropTypes.number.isRequired,
+  scrollDirection: PropTypes.number.isRequired,
+  scrollSpeed: PropTypes.number.isRequired,
 };
 
 export default ConnectionLine;

@@ -8,10 +8,11 @@ import {
   Input,
   Label,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 import { actions } from '../../store';
 import AdvancedSettingsModal from './AdvancedSettingsModal';
 
-class WifiSettingsForm extends Component {
+export default class WifiSettingsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +55,10 @@ class WifiSettingsForm extends Component {
 
   isFieldValid(name) {
     const { fields, valid } = this.state;
-    fields[name] ? valid[name] : undefined;
+    if (fields[name]) {
+      return valid[name];
+    }
+    return undefined;
   }
 
   render() {
@@ -139,4 +143,7 @@ class WifiSettingsForm extends Component {
   }
 }
 
-export default WifiSettingsForm;
+WifiSettingsForm.propTypes = {
+  wifiSettings: PropTypes.objectOf(PropTypes.string).isRequired,
+  fields: PropTypes.objectOf(PropTypes.string).isRequired,
+};

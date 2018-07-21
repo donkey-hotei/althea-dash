@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import ExitList from './ExitList';
 import NodeInfoForm from './NodeInfoForm';
 import { emailRegex } from '../../lib/utils';
@@ -16,5 +17,13 @@ const ExitSelector = ({ exitClient: { regDetails, currentExit, exits } }) => (
     />
   </div>
 );
+
+ExitSelector.propTypes = {
+  exitClient: PropTypes.shape({
+    regDetails: PropTypes.string,
+    currentExit: PropTypes.string,
+    exits: PropTypes.objectOf(PropTypes.object),
+  }).isRequired,
+};
 
 export default ExitSelector;

@@ -1,7 +1,8 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const PercentSpacer = ({
-  children, progress, pointer, pointerAlign,
+  children, progress, pointer,
 }) => {
   if (progress < 50) {
     return (
@@ -48,6 +49,12 @@ const PercentSpacer = ({
       </div>
     </div>
   );
+};
+
+PercentSpacer.propTypes = {
+  children: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+  pointer: PropTypes.string.isRequired,
 };
 
 export default PercentSpacer;

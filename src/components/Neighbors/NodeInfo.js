@@ -4,24 +4,20 @@ import {
   CardBody,
   CardTitle,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 import LabelUnit from './LabelUnit';
 import ConnectionLine from './ConnectionLine';
 import { clamp, metric2word } from '../../lib/utils';
 
 const NodeInfo = ({
   nickname,
-
-  linkCost,
+  // linkCost,
   normalizedLinkCost,
-
   routeMetricToExit,
   normalizedRouteMetricToExit,
-
   priceToExit,
-
   currentDebt,
   normalizedCurrentDebt,
-
   totalDebt,
 }) => (
   <div
@@ -111,11 +107,23 @@ Me
       scrollSpeed={(1.1 - normalizedCurrentDebt) * 30}
     />
     <h3 role="img" style={{ marginBottom: 0, marginLeft: 10 }}>
-      <span role="img">
+      <span role="img" aria-label="emoji">
             🌎
       </span>
     </h3>
   </div>
 );
+
+NodeInfo.propTypes = {
+  nickname: PropTypes.string.isRequired,
+  // linkCost: PropTypes.number.isRequired,
+  normalizedLinkCost: PropTypes.number.isRequired,
+  routeMetricToExit: PropTypes.number.isRequired,
+  normalizedRouteMetricToExit: PropTypes.number.isRequired,
+  priceToExit: PropTypes.number.isRequired,
+  currentDebt: PropTypes.number.isRequired,
+  normalizedCurrentDebt: PropTypes.number.isRequired,
+  totalDebt: PropTypes.number.isRequired,
+};
 
 export default NodeInfo;

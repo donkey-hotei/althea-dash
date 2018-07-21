@@ -1,3 +1,3 @@
-import FrontPage from './FrontPage'
+import FrontPage from './FrontPage';
 
 export default FrontPage;

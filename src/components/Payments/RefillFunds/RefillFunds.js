@@ -5,6 +5,7 @@ import {
   ModalHeader,
   ModalBody,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 import QRious from 'qrious';
 
 export default class RefillFunds extends Component {
@@ -44,6 +45,7 @@ export default class RefillFunds extends Component {
           </ModalHeader>
           <ModalBody className="refill-funds-modal-body">
             <img
+              alt="QR code"
               src={new QRious({
                 size: 256,
                 value: address,
@@ -56,3 +58,7 @@ export default class RefillFunds extends Component {
     );
   }
 }
+
+RefillFunds.propTypes = {
+  address: PropTypes.string.isRequired,
+};

@@ -1,10 +1,11 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const LabelUnit = ({
   label,
   content,
-  marginBottom,
-  marginRight
+  // marginBottom,
+  // marginRight,
 }) => (
   <div
     style={{
@@ -25,5 +26,11 @@ const LabelUnit = ({
   </div>
 );
 
+LabelUnit.propTypes = {
+  label: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  // marginBottom: PropTypes.number.isRequired,
+  // marginRight: PropTypes.number.isRequired,
+};
 
 export default LabelUnit;

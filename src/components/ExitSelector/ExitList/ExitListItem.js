@@ -4,6 +4,7 @@ import {
   ListGroupItem,
   ListGroupItemHeading,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 import { actions } from '../../../store';
 
 const ExitListItem = ({
@@ -71,5 +72,13 @@ const ExitListItem = ({
     </div>
   </ListGroupItem>
 );
+
+ExitListItem.propTypes = {
+  active: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
+  nickname: PropTypes.string.isRequired,
+  state: PropTypes.oneOf(['Registered', 'Denied', 'New', 'Pending']).isRequired,
+  message: PropTypes.string.isRequired,
+};
 
 export default ExitListItem;

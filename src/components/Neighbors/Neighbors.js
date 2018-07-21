@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { actions, connect } from '../../store';
 import NodeInfo from './NodeInfo';
 import {
@@ -46,7 +47,8 @@ class Neighbors extends Component {
   }
 
   render() {
-    const { neighborData } = this.props.state;
+    const { state } = this.props;
+    const { neighborData } = state;
     const normNeighbors = normalizeNeighbors(neighborData);
 
     return (
@@ -61,5 +63,9 @@ class Neighbors extends Component {
     );
   }
 }
+
+Neighbors.propTypes = {
+  state: PropTypes.objectOf(PropTypes.number).isRequired,
+};
 
 export default connect(['neighborData'])(Neighbors);

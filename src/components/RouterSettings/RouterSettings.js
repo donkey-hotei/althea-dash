@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { actions, connect } from '../../store';
 import WifiSettingsForm from './WifiSettingsForm';
 
@@ -24,10 +25,10 @@ class RouterSettings extends Component {
           }}
         >
           {wifiSettings
-            && wifiSettings.map((settings, i) => (
+            && wifiSettings.map(settings => (
               <WifiSettingsForm
                 store={store}
-                key={`setting-${i}`}
+                key={settings.ssid}
                 wifiSettings={settings}
               />
             ))}
@@ -37,5 +38,9 @@ class RouterSettings extends Component {
   }
 }
 
+RouterSettings.propTypes = {
+  wifiSettings: PropTypes.objectOf(PropTypes.string).isRequired,
+  store: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default connect(['wifiSettings'])(RouterSettings);

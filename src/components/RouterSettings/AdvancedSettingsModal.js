@@ -10,9 +10,9 @@ import {
   ModalBody,
   ModalFooter,
 } from 'reactstrap';
+import { PropTypes } from 'prop-types';
 
-
-class AdvancedSettingsModal extends Component {
+export default class AdvancedSettingsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -87,4 +87,7 @@ class AdvancedSettingsModal extends Component {
   }
 }
 
-export default AdvancedSettingsModal;
+AdvancedSettingsModal.propTypes = {
+  className: PropTypes.string.isRequired,
+  network: PropTypes.objectOf(PropTypes.string).isRequired,
+};

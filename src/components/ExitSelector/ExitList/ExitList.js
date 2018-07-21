@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { ListGroup } from 'reactstrap';
 import ExitListItem from './ExitListItem';
 
@@ -9,12 +10,12 @@ const ExitList = ({ currentExit, exits, disabled }) => (
       active
       description={exits[currentExit].message}
       nickname={currentExit}
-      state={exits[currentExit].statex}
+      state={exits[currentExit].state}
       message={exits[currentExit].message}
       key="foo"
     />
     )}
-    {Object.entries(exits).map(([nickname, exit], i) => (
+    {Object.entries(exits).map(([nickname, exit]) => (
       nickname !== currentExit
           && exit.state !== 'Disabled' && (
             <ExitListItem
@@ -22,7 +23,7 @@ const ExitList = ({ currentExit, exits, disabled }) => (
               nickname={nickname}
               state={exit.state}
               message={exit.message}
-              key={i}
+              key={nickname}
             />
       )
     ))}
@@ -35,5 +36,20 @@ const ExitList = ({ currentExit, exits, disabled }) => (
     )}
   </ListGroup>
 );
+
+ExitList.defaultProps = {
+  disabled: false,
+};
+
+ExitList.propTypes = {
+  currentExit: PropTypes.string.isRequired,
+  exits: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+    state: PropTypes.oneOf(['Registered', 'Denied', 'New', 'Pending']).isRequired,
+    nickname: PropTypes.string.isRequired,
+    exit: PropTypes.string.isRequired,
+  }).isRequired,
+  disabled: PropTypes.bool,
+};
 
 export default ExitList;

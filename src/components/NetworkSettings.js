@@ -1,56 +1,7 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { actions, connect } from '../store';
 import ExitSelector from './ExitSelector';
-
-const exit_client = {
-  exit_client: {
-    current_exit: 'exit_a',
-    exits: {
-      exit_a: {
-        general_details: {
-          description: 'just a normal althea exit',
-          eth_address: '0x0101010101010101010101010101010101010101',
-          exit_price: 50,
-          netmask: 24,
-          server_internal_ip: '172.168.1.254',
-          wg_exit_port: 59999,
-          wg_public_key: 'OBQNe50O7Gf+pJq4ZC1tTcjVYbx7o8jt4dxTFw7QnVw=',
-        },
-        ip: 'fd00::5',
-        message: 'Registration OK',
-        our_details: { client_internal_ip: '172.168.1.101' },
-        registration_port: 4875,
-        state: 'Registered',
-      },
-    },
-    reg_details: { email: '1234@gmail.com', zip_code: '1234' },
-    wg_listen_port: 59999,
-  },
-  exit_tunnel_settings: { lan_nics: ['lo'] },
-  network: {
-    babel_port: 6872,
-    bounty_ip: 'fd00::3',
-    bounty_port: 8888,
-    default_route: [],
-    manual_peers: [],
-    own_ip: 'fd00::1',
-    peer_interfaces: ['veth-1-6'],
-    rita_dashboard_port: 4877,
-    rita_hello_port: 4876,
-    wg_private_key: 'AKlrbUt13OPYp6+cy9lllQ47KCdM2+3+y7q3OqsTd2Q=',
-    wg_private_key_path:
-      '/home/ben/src/althea_rs/integration-tests/private-key-1',
-    wg_public_key: 'QEKhgUJ7VnjPnEJ2eLYaLu4RMDhQmylN1dNHQHth+Uw=',
-    wg_start_port: 60000,
-  },
-  payment: {
-    buffer_period: 3,
-    close_fraction: '100',
-    close_threshold: '-1000000000',
-    eth_address: '0x0101010101010101010101010101010101010101',
-    pay_threshold: '0',
-  },
-};
 
 class NetworkSettings extends Component {
   componentDidMount() {
@@ -94,5 +45,8 @@ class NetworkSettings extends Component {
   }
 }
 
+NetworkSettings.propTypes = {
+  state: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default connect(['settings'])(NetworkSettings);

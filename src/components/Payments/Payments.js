@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import MoneyBar from './MoneyBar';
 import RefillFunds from './RefillFunds';
-import { actions, connect } from '../../store';
+import { actions } from '../../store';
 
-class Payments extends Component {
+export default class Payments extends Component {
   constructor(props) {
     super(props);
     actions.getInfo();
@@ -45,4 +46,6 @@ class Payments extends Component {
   }
 }
 
-export default Payments;
+Payments.propTypes = {
+  state: PropTypes.objectOf(PropTypes.number).isRequired,
+};

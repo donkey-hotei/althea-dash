@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Progress } from 'reactstrap';
 import PercentSpacer from './PercentSpacer';
 
@@ -42,6 +43,11 @@ const MoneyBar = ({ avgUse, currentFunds }) => {
       </PercentSpacer>
     </div>
   );
+};
+
+MoneyBar.propTypes = {
+  avgUse: PropTypes.number.isRequired,
+  currentFunds: PropTypes.number.isRequired,
 };
 
 export default MoneyBar;
