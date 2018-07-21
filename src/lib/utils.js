@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-/* ***********************
+/**
  * Numbers.
  */
 
@@ -113,17 +113,16 @@ export const isObject = object => Object.prototype.toString.call(object) === '[o
  * @param {function} func    Function mapped over object.
  */
 export const deepMapKeys = (object, func) => {
-
   if (isObject(object)) {
     return _.keys(object).reduce((newObject, key) => {
-      newObject[func(key)] = deepMapKeys(object[key], func);
-      return newObject;
+      const newObj = newObject;
+      newObj[func(key)] = deepMapKeys(object[key], func);
+      return newObj;
     }, {});
-  } else if (Array.isArray(object)) {
+  } if (Array.isArray(object)) {
     return object.map(item => deepMapKeys(item, func));
-  } else {
-    return object;
   }
+  return object;
 };
 
 /**

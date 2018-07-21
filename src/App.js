@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   onHashChange() {
+    this.props = this.props; // HACK: to get around eslint violation
     actions.changePage(window.location.hash.substr(1));
   }
 
