@@ -1,6 +1,10 @@
 import client from './client';
 
 /*
+ * Router dashboard API documentation found here: https://bit.ly/2JFa8sV
+ */
+
+/*
  * GET /neighbors
  */
 export const getNeighbors = () => client.get('/neighbors');
